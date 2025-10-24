@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callys Bakery | About Us</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-cookie-bite"></i> Callys Bakery
+                </div>
+                
+                <nav>
+                    <ul id="nav-menu">
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="about.html" class="active">About Us</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="user-actions">
+                    <div class="cart-icon">
+                        <button id="cart-btn">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span id="cart-count" class="cart-count">0</span>
+                        </button>
+                    </div>
+                    
+                    <div class="favorites-icon">
+                        <button id="favorites-btn">
+                            <i class="fas fa-heart"></i>
+                            <span id="favorites-count" class="cart-count">0</span>
+                        </button>
+                    </div>
+                    
+                    <button id="logout-btn">
+                        <i class="fas fa-sign-out-alt"></i> Logout
+                    </button>
+                    
+                    <button class="mobile-menu-btn" id="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container">
+        <div class="page">
+            <h1>About Callys Bakery</h1>
+            
+            <div class="about-content">
+                <div>
+                    <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" 
+                         alt="Our Bakery" class="about-image">
+                </div>
+                <div>
+                    <h2>Our Story</h2>
+                    <p>
+                        Callys Bakery started in 2015 as a small home bakery with a passion for creating the most delicious brownies and cookies. 
+                        What began as a hobby quickly turned into a beloved local business.
+                    </p>
+                    <p>
+                        We believe in using only the finest ingredients - real butter, premium chocolate, and organic eggs - to create treats that 
+                        are not only delicious but made with love and care.
+                    </p>
+                    <p>
+                        Today, we're proud to serve our community with a wide variety of brownies, cookies, and other baked goods, all made fresh daily.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="values">
+                <div class="value-item">
+                    <i class="fas fa-award"></i>
+                    <h3>Award Winning</h3>
+                    <p>Recognized as the best bakery in the region for 3 consecutive years.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-leaf"></i>
+                    <h3>Natural Ingredients</h3>
+                    <p>We source our ingredients locally and use no artificial additives.</p>
+                </div>
+                
+                <div class="value-item">
+                    <i class="fas fa-heart"></i>
+                    <h3>Made with Love</h3>
+                    <p>Every treat is baked with care and attention to detail.</p>
+                </div>
+            </div>
+            
+            <div class="special-offer">
+                <h2>Visit Our Bakery</h2>
+                <p>Come see us at our location and enjoy the warm, inviting atmosphere of our bakery.</p>
+                <a href="contact.html" class="btn">Find Us</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <i class="fas fa-cookie-bite"></i>
+                    <h2>Callys Bakery</h2>
+                </div>
+                <p>Freshly baked brownies and cookies made with love.</p>
+                
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+                
+                <div class="footer-bottom">
+                    <p>&copy; 2023 Callys Bakery. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const navMenu = document.getElementById('nav-menu');
+        const logoutBtn = document.getElementById('logout-btn');
+        const cartBtn = document.getElementById('cart-btn');
+        const favoritesBtn = document.getElementById('favorites-btn');
+
+        // State
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+        let currentUser = JSON.parse(localStorage.getItem('currentUser'));
+
+        // Check if user is logged in
+        if (!currentUser) {
+            window.location.href = 'index.html';
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateCartCount();
+            updateFavoritesCount();
+            
+            // Mobile Menu Toggle
+            mobileMenuBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+            });
+
+            // Logout
+            logoutBtn.addEventListener('click', () => {
+                localStorage.removeItem('currentUser');
+                localStorage.removeItem('cart');
+                localStorage.removeItem('favorites');
+                window.location.href = 'index.html';
+            });
+
+            // Cart Button
+            cartBtn.addEventListener('click', () => {
+                window.location.href = 'cart.html';
+            });
+
+            // Favorites Button
+            favoritesBtn.addEventListener('click', () => {
+                // In a real app, this would navigate to favorites page
+                showNotification('Favorites feature coming soon!', 'info');
+            });
+        });
+
+        // Update Cart Count
+        function updateCartCount() {
+            const cartCount = document.getElementById('cart-count');
+            const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
+            cartCount.textContent = totalItems;
+        }
+
+        // Update Favorites Count
+        function updateFavoritesCount() {
+            const favoritesCount = document.getElementById('favorites-count');
+            favoritesCount.textContent = favorites.length;
+        }
+
+        // Notification System
+        function showNotification(message, type = 'info') {
+            // Create notification element
+            const notification = document.createElement('div');
+            notification.className = `notification ${type}`;
+            notification.textContent = message;
+            
+            // Add to page
+            document.body.appendChild(notification);
+            
+            // Remove after 3 seconds
+            setTimeout(() => {
+                notification.remove();
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

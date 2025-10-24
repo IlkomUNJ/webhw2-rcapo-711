@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Callys Bakery - Menu</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>Callys Bakery</h1>
+            </div>
+            <nav class="navbar">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="menu.html" class="active">Menu</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="cart.html" class="cart-icon"><i class="fas fa-shopping-cart"></i> <span class="cart-count">0</span></a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Our Complete Menu</h1>
+            <p class="menu-intro">Discover our wide selection of freshly baked brownies and cookies, made with the finest ingredients.</p>
+        </div>
+    </section>
+
+    <!-- Menu Content -->
+    <main class="container menu-container">
+        <div class="menu-categories">
+            <button class="category-btn active" data-category="all">All Items</button>
+            <button class="category-btn" data-category="brownies">Brownies</button>
+            <button class="category-btn" data-category="cookies">Cookies</button>
+        </div>
+        
+        <div class="menu-items">
+            <!-- Brownie Items -->
+            <div class="product-card menu-item" data-category="brownies">
+                <img src="classic.jpg" alt="Classic Fudge Brownie" class="product-image">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Classic Fudge Brownie</h3>
+                        <button class="favorite-btn" data-id="1">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="product-description">Rich and moist brownies with a deep chocolate flavor.</p>
+                    <div class="product-actions">
+                        <span class="product-price">$3.50</span>
+                        <button class="add-to-cart-btn" data-id="1" data-name="Classic Fudge Brownie" data-price="3.50">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card menu-item" data-category="brownies">
+                <img src="chewy.jpg" alt="Chewy Chocolate Brownies" class="product-image">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Chewy Chocolate Brownies</h3>
+                        <button class="favorite-btn" data-id="2">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="product-description">Soft, chewy, and packed with extra chocolate goodness.</p>
+                    <div class="product-actions">
+                        <span class="product-price">$3.75</span>
+                        <button class="add-to-cart-btn" data-id="2" data-name="Chewy Chocolate Brownies" data-price="3.75">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card menu-item" data-category="brownies">
+                <img src="matcha.jpg" alt="Matcha Brownies" class="product-image">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Matcha Brownies</h3>
+                        <button class="favorite-btn" data-id="3">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="product-description">Unique brownies with the earthy taste of green tea and a fudgy texture.</p>
+                    <div class="product-actions">
+                        <span class="product-price">$4.00</span>
+                        <button class="add-to-cart-btn" data-id="3" data-name="Matcha Brownies" data-price="4.00">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card menu-item" data-category="brownies">
+                <img src="redvelvet.jpg" alt="Red Velvet Brownies" class="product-image">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Red Velvet Brownies</h3>
+                        <button class="favorite-btn" data-id="4">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="product-description">A beautiful mix of red velvet flavor with a fudgy texture.</p>
+                    <div class="product-actions">
+                        <span class="product-price">$4.25</span>
+                        <button class="add-to-cart-btn" data-id="4" data-name="Red Velvet Brownies" data-price="4.25">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card menu-item" data-category="brownies">
+                <img src="cheesecake.jpg" alt="Cheesecake Brownies" class="product-image">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Cheesecake Brownies</h3>
+                        <button class="favorite-btn" data-id="5">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="product-description">Fudgy chocolate brownies swirled with creamy cheesecake.</p>
+                    <div class="product-actions">
+                        <span class="product-price">$4.50</span>
+                        <button class="add-to-cart-btn" data-id="5" data-name="Cheesecake Brownies" data-price="4.50">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cookie Items -->
+            <div class="product-card menu-item" data-category="cookies">
+                <img src="chocochip.jpg" alt="Chocolate Chip Cookies" class="product-image">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Chocolate Chip Cookies</h3>
+                        <button class="favorite-btn" data-id="6">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="product-description">Golden cookies loaded with melty chocolate chips.</p>
+                    <div class="product-actions">
+                        <span class="product-price">$2.00</span>
+                        <button class="add-to-cart-btn" data-id="6" data-name="Chocolate Chip Cookies" data-price="2.00">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card menu-item" data-category="cookies">
+                <img src="doublecoklat.jpg" alt="Double Chocolate Cookies" class="product-image">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Double Chocolate Cookies</h3>
+                        <button class="favorite-btn" data-id="7">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="product-description">Extra chocolatey cookies with a rich, fudgy bite.</p>
+                    <div class="product-actions">
+                        <span class="product-price">$2.25</span>
+                        <button class="add-to-cart-btn" data-id="7" data-name="Double Chocolate Cookies" data-price="2.25">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card menu-item" data-category="cookies">
+                <img src="Raisin.jpg" alt="Oatmeal Raisin Cookies" class="product-image">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Oatmeal Raisin Cookies</h3>
+                        <button class="favorite-btn" data-id="8">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="product-description">Chewy oatmeal cookies with sweet raisins inside.</p>
+                    <div class="product-actions">
+                        <span class="product-price">$2.50</span>
+                        <button class="add-to-cart-btn" data-id="8" data-name="Oatmeal Raisin Cookies" data-price="2.50">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card menu-item" data-category="cookies">
+                <img src="peanut.jpg" alt="Peanut Butter Cookies" class="product-image">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Peanut Butter Cookies</h3>
+                        <button class="favorite-btn" data-id="9">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="product-description">Soft cookies with the creamy taste of peanut butter.</p>
+                    <div class="product-actions">
+                        <span class="product-price">$2.75</span>
+                        <button class="add-to-cart-btn" data-id="9" data-name="Peanut Butter Cookies" data-price="2.75">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="product-card menu-item" data-category="cookies">
+                <img src="whitechoco.jpg" alt="Matcha White Choco Cookies" class="product-image">
+                <div class="product-info">
+                    <div class="product-header">
+                        <h3 class="product-title">Matcha White Choco Cookies</h3>
+                        <button class="favorite-btn" data-id="10">
+                            <i class="far fa-heart"></i>
+                        </button>
+                    </div>
+                    <p class="product-description">Unique green tea cookies with white chocolate chunks.</p>
+                    <div class="product-actions">
+                        <span class="product-price">$3.00</span>
+                        <button class="add-to-cart-btn" data-id="10" data-name="Matcha White Choco Cookies" data-price="3.00">
+                            Add to Cart
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="special-offer">
+            <h2>Special Bundle Deal!</h2>
+            <p>Get 6 assorted brownies or cookies for only $15.00 (Save $5!)</p>
+            <button class="btn btn-primary" id="bundle-deal">Add Bundle to Cart</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Callys Bakery</h3>
+                    <p>Baked With Love, Share With Joy!</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="home.html">Home</a></li>
+                        <li><a href="menu.html">Menu</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> 5 Melati Street, Rawamangun</p>
+                    <p><i class="fas fa-phone"></i> (021) 123-4567</p>
+                    <p><i class="fas fa-envelope"></i> callysbakes@gmail.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Callys Bakery. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Category filtering
+        document.addEventListener('DOMContentLoaded', function() {
+            const categoryButtons = document.querySelectorAll('.category-btn');
+            const menuItems = document.querySelectorAll('.menu-item');
+            
+            categoryButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    categoryButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const category = this.getAttribute('data-category');
+                    
+                    // Show/hide menu items based on category
+                    menuItems.forEach(item => {
+                        if (category === 'all' || item.getAttribute('data-category') === category) {
+                            item.style.display = 'block';
+                        } else {
+                            item.style.display = 'none';
+                        }
+                    });
+                });
+            });
+            
+            // Add to cart functionality
+            const addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+            const cartCount = document.querySelector('.cart-count');
+            let count = 0;
+            
+            addToCartButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    count++;
+                    cartCount.textContent = count;
+                    
+                    // Simple animation feedback
+                    const originalText = this.textContent;
+                    this.textContent = 'Added!';
+                    this.style.backgroundColor = '#27ae60';
+                    
+                    setTimeout(() => {
+                        this.textContent = originalText;
+                        this.style.backgroundColor = '';
+                    }, 1000);
+                });
+            });
+            
+            // Bundle deal
+            const bundleDeal = document.getElementById('bundle-deal');
+            bundleDeal.addEventListener('click', function() {
+                count += 1;
+                cartCount.textContent = count;
+                
+                // Simple animation feedback
+                const originalText = this.textContent;
+                this.textContent = 'Bundle Added!';
+                
+                setTimeout(() => {
+                    this.textContent = originalText;
+                }, 1000);
+            });
+            
+            // Favorite buttons
+            const favoriteButtons = document.querySelectorAll('.favorite-btn');
+            favoriteButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const icon = this.querySelector('i');
+                    if (icon.classList.contains('far')) {
+                        icon.classList.remove('far');
+                        icon.classList.add('fas');
+                        icon.style.color = '#e74c3c';
+                    } else {
+                        icon.classList.remove('fas');
+                        icon.classList.add('far');
+                        icon.style.color = '';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
